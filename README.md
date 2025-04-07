@@ -41,9 +41,13 @@ Berdasarkan hasil analisis tidak ditemukan nilai yang hilang (*missing values*) 
 
 #### A. Distiribusi Kelompok Usia berdasarkan Status CKD
 
+<img src="Images/Image1.png">
+
 Grafik tersebut menunjukkan distribusi kelompok usia pasien berdasarkan status penyakit ginjal kronis (CKD). Dari grafik ini terlihat bahwa jumlah pasien dengan CKD (ditandai dengan batang berwarna hijau) cenderung meningkat seiring bertambahnya usia. Peningkatan yang signifikan mulai terlihat pada kelompok usia 43–51 tahun dan mencapai puncaknya pada kelompok usia 59–66 tahun. Setelah itu, meskipun sedikit menurun, jumlah pasien CKD tetap tinggi pada kelompok usia 66–74 tahun. Sementara itu, pasien tanpa CKD (ditandai dengan batang berwarna oranye) lebih banyak ditemukan pada kelompok usia yang lebih muda, terutama pada rentang usia 27–35 tahun. Jumlah pasien non-CKD kemudian menurun secara bertahap pada kelompok usia yang lebih tua. Berdasarkan pola ini, dapat disimpulkan bahwa CKD lebih umum terjadi pada individu dengan usia lanjut, sedangkan individu yang lebih muda cenderung tidak menderita CKD. Distribusi ini mencerminkan pentingnya perhatian dan pencegahan CKD pada kelompok usia menengah ke atas.
 
 #### B. Distribusi CKD berdasarkan Kombinasi Risiko (Hipertensi, Diabetes, CAD)
+
+<img src="Images/Image2.png">
 
 Grafik tersebut menunjukkan distribusi penyakit ginjal kronis (CKD) berdasarkan kombinasi faktor risiko yaitu hipertensi (htn), diabetes (dm), dan penyakit jantung koroner (CAD). Sumbu X menunjukkan berbagai kombinasi risiko dalam format biner (`0` untuk tidak memiliki risiko, `1` untuk memiliki risiko), misalnya `0-0-0` berarti pasien tidak memiliki ketiga risiko, sedangkan `1-1-0` berarti pasien memiliki hipertensi dan diabetes, tetapi tidak memiliki CAD. Sumbu Y menunjukkan jumlah pasien dalam setiap kategori kombinasi risiko, dengan warna hijau untuk pasien CKD dan oranye untuk pasien non-CKD.
 
@@ -52,6 +56,8 @@ Dari grafik ini terlihat bahwa jumlah pasien terbanyak berada pada kombinasi ris
 Secara keseluruhan, grafik ini memperlihatkan bahwa CKD lebih umum terjadi pada pasien dengan satu atau lebih faktor risiko, khususnya hipertensi dan diabetes. Semakin banyak faktor risiko yang dimiliki, semakin tinggi pula kemungkinan seseorang menderita CKD. Temuan ini mempertegas pentingnya deteksi dan manajemen dini terhadap hipertensi dan diabetes untuk mencegah terjadinya CKD.
 
 #### C. Distribusi Gejala Klinis pada Pasien CKD
+
+<img src="Images/Image3.png">
 
 Gambar tersebut menunjukkan distribusi gejala klinis pada pasien dengan penyakit ginjal kronis (CKD) dalam bentuk tiga diagram lingkaran. Gejala yang ditampilkan meliputi anemia, edema (pembengkakan), dan nafsu makan buruk. Dari diagram pertama, diketahui bahwa sebanyak 75% pasien CKD tidak mengalami anemia, sementara 25% sisanya mengalami gejala tersebut. Pada gejala edema, 72,7% pasien tidak mengalaminya, sedangkan 27,3% mengalami edema. Sementara itu, pada gejala nafsu makan buruk, tercatat 68,8% pasien tidak mengalami gangguan ini, dan 31,2% pasien mengalaminya. Berdasarkan data ini, dapat disimpulkan bahwa sebagian besar pasien CKD tidak menunjukkan gejala-gejala klinis tersebut, namun tetap terdapat proporsi yang signifikan, terutama pada gejala nafsu makan buruk, yang menunjukkan angka tertinggi di antara ketiganya. 
 
@@ -86,13 +92,19 @@ Berdasarkan hasil yang evaluasi, model Random Forest menunjukkan performa terbai
 
 ### Confusion Matrix
 
+<img src="Images/Image4.png">
+
 Berdasarkan hasil yang ditampilkan, model berhasil mengklasifikasikan seluruh data dengan sempurna. Sebanyak 25 data dengan label aktual negatif berhasil diprediksi sebagai negatif, dan 15 data dengan label aktual positif berhasil diprediksi sebagai positif. Tidak terdapat kesalahan klasifikasi, baik berupa false positive maupun false negative. Hal ini menunjukkan bahwa model Random Forest memiliki performa yang sangat baik dalam membedakan antara kelas positif dan negatif, dengan akurasi dan presisi yang sempurna dalam pengujian ini.
 
 ### Kurva ROC
 
+<img src="Images/Image5.png">
+
 Kurva ROC (Receiver Operating Characteristic) dari model Random Forest yang digunakan untuk menilai kemampuan model dalam membedakan antara kelas positif dan negatif. Kurva ROC menunjukkan hubungan antara True Positive Rate (TPR) dan False Positive Rate (FPR). Berdasarkan grafik, kurva ROC model berada di sudut kiri atas grafik dan membentuk garis hampir tegak lurus dengan sumbu x, yang menandakan performa klasifikasi yang sangat baik. Nilai AUC (Area Under Curve) sebesar 1.00 mengindikasikan bahwa model memiliki kemampuan sempurna dalam membedakan kedua kelas tanpa kesalahan. Semakin mendekati angka 1.0, semakin tinggi kemampuan diskriminatif model, dan dalam kasus ini, model Random Forest menunjukkan performa optimal dalam klasifikasi.
 
 ### Feature Importance
+
+<img src="Images/Image6.png">
 
 Feature importance menggambarkan seberapa besar kontribusi masing-masing fitur (variabel) terhadap performa model dalam melakukan prediksi. Dari grafik, terlihat bahwa fitur pcv (packed cell volume) memiliki pengaruh terbesar, yakni sebesar 21,05%, diikuti oleh sg (specific gravity) dan htn (hypertension) yang masing-masing memberikan kontribusi sebesar 13,30% dan 9,92%. Fitur-fitur lain seperti rbcc (red blood cell count), hemo (hemoglobin), dm (diabetes mellitus), dan al (albumin) juga memberikan kontribusi yang signifikan terhadap model.
 
